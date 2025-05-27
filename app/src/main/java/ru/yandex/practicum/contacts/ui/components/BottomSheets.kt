@@ -5,7 +5,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import ru.yandex.practicum.contacts.R
 import ru.yandex.practicum.contacts.data.CountryCode
 import ru.yandex.practicum.contacts.data.MessagingApp
 import ru.yandex.practicum.contacts.data.SortOrder
@@ -17,7 +19,7 @@ fun CountryCodeBottomSheet(
     onDismiss: () -> Unit
 ) {
     CommonBottomSheet(
-        title = "Filter by country code",
+        title = stringResource(R.string.filter_by_country_code),
         items = CountryCode.COMMON_CODES,
         selectedItems = selectedCodes,
         onItemsSelected = onCodesSelected,
@@ -61,7 +63,7 @@ fun FilterBottomSheet(
     onDismiss: () -> Unit
 ) {
     CommonBottomSheet(
-        title = "Filter by messaging app",
+        title = stringResource(R.string.filter_by_messaging_app),
         items = MessagingApp.entries,
         selectedItems = selectedApps,
         onItemsSelected = onAppsSelected,
@@ -98,7 +100,7 @@ fun SortBottomSheet(
     onDismiss: () -> Unit
 ) {
     CommonBottomSheet(
-        title = "Sort by",
+        title = stringResource(R.string.sort_by_default),
         items = SortOrder.entries,
         selectedItems = setOf(currentSortOrder),
         onItemsSelected = { selected ->
