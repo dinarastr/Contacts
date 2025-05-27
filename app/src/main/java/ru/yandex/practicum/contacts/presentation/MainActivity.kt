@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
+import ru.yandex.practicum.contacts.presentation.main.ContactsScreen
 import ru.yandex.practicum.contacts.presentation.ui.theme.ContactsTheme
-import ru.yandex.practicum.contacts.ui.ContactsScreen
 
 @OptIn(ExperimentalPermissionsApi::class)
 class MainActivity : ComponentActivity() {
