@@ -105,36 +105,3 @@ fun CommonBottomSheetItem(
         }
     }
 }
-
-@Composable
-fun CommonBottomSheetRadioItem(
-    isSelected: Boolean,
-    onSelectionChanged: (Boolean) -> Unit,
-    content: @Composable () -> Unit
-) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        onClick = { onSelectionChanged(!isSelected) },
-        color = if (isSelected) {
-            MaterialTheme.colorScheme.primaryContainer
-        } else {
-            MaterialTheme.colorScheme.surface
-        }
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            RadioButton(
-                selected = isSelected,
-                onClick = { onSelectionChanged(!isSelected) }
-            )
-            Spacer(modifier = Modifier.width(16.dp))
-            content()
-        }
-    }
-} 

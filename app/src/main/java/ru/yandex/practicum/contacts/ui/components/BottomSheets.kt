@@ -75,7 +75,7 @@ fun SortBottomSheet(
             selected.firstOrNull()?.let { onSortOrderSelected(it) }
         }
     ) { sortOrder, isSelected, _ ->
-        CommonBottomSheetRadioItem(
+        CommonBottomSheetItem(
             isSelected = isSelected,
             onSelectionChanged = { onSortOrderSelected(sortOrder) }
         ) {
