@@ -81,24 +81,37 @@ fun SortBottomSheet(
                             MaterialTheme.colorScheme.surface
                         }
                     ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Checkbox(
-                                checked = isSelected,
-                                onCheckedChange = { onSortOrderSelected(sortOrder) }
-                            )
-                            Spacer(modifier = Modifier.width(16.dp))
-                            Text(
-                                sortOrder.displayName
-                            )
-                        }
+                        SortOrderOption(
+                            isSelected = isSelected,
+                            sortOrder = sortOrder,
+                            onSortOrderSelected = onSortOrderSelected
+                        )
                     }
                 }
             }
         }
     }
-} 
+}
+
+@Composable
+private fun SortOrderOption(
+    isSelected: Boolean,
+    sortOrder: SortOrder,
+    onSortOrderSelected: (SortOrder) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = isSelected,
+            onCheckedChange = { onSortOrderSelected(sortOrder) }
+        )
+        Spacer(modifier = Modifier.width(16.dp))
+        Text(
+            sortOrder.displayName
+        )
+    }
+}

@@ -89,37 +89,52 @@ fun CountryCodeBottomSheet(
                             MaterialTheme.colorScheme.surface
                         }
                     ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Checkbox(
-                                checked = isSelected,
-                                onCheckedChange = { checked ->
-                                    val newSelection = selectedCodes.toMutableSet()
-                                    if (checked) {
-                                        newSelection.add(countryCode)
-                                    } else {
-                                        newSelection.remove(countryCode)
-                                    }
-                                    onCodesSelected(newSelection)
-                                }
-                            )
-                            Spacer(modifier = Modifier.width(16.dp))
-                            Column {
-                                Text(countryCode.code)
-                                Text(
-                                    countryCode.country,
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                        }
+                        CountryCodeOption(
+                            isSelected = isSelected,
+                            countryCode = countryCode,
+                            selectedCodes = selectedCodes,
+                            onCodesSelected = onCodesSelected
+                        )
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun CountryCodeOption(
+    isSelected: Boolean,
+    countryCode: CountryCode,
+    selectedCodes: Set<CountryCode>,
+    onCodesSelected: (Set<CountryCode>) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = isSelected,
+            onCheckedChange = { checked ->
+                val newSelection = selectedCodes.toMutableSet()
+                if (checked) {
+                    newSelection.add(countryCode)
+                } else {
+                    newSelection.remove(countryCode)
+                }
+                onCodesSelected(newSelection)
+            }
+        )
+        Spacer(modifier = Modifier.width(16.dp))
+        Column {
+            Text(countryCode.code)
+            Text(
+                countryCode.country,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }

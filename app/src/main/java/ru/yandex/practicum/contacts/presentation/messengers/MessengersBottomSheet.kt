@@ -89,30 +89,45 @@ fun MessengersBottomSheet(
                             MaterialTheme.colorScheme.surface
                         }
                     ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Checkbox(
-                                checked = isSelected,
-                                onCheckedChange = { checked ->
-                                    val newSelection = selectedApps.toMutableSet()
-                                    if (checked) {
-                                        newSelection.add(app)
-                                    } else {
-                                        newSelection.remove(app)
-                                    }
-                                    onAppsSelected(newSelection)
-                                }
-                            )
-                            Spacer(modifier = Modifier.width(16.dp))
-                            Text(app.name)
-                        }
+                        MessengerOption(
+                            isSelected = isSelected,
+                            app = app,
+                            selectedApps = selectedApps,
+                            onAppsSelected = onAppsSelected
+                        )
                     }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun MessengerOption(
+    isSelected: Boolean,
+    app: MessagingApp,
+    selectedApps: Set<MessagingApp>,
+    onAppsSelected: (Set<MessagingApp>) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = isSelected,
+            onCheckedChange = { checked ->
+                val newSelection = selectedApps.toMutableSet()
+                if (checked) {
+                    newSelection.add(app)
+                } else {
+                    newSelection.remove(app)
+                }
+                onAppsSelected(newSelection)
+            }
+        )
+        Spacer(modifier = Modifier.width(16.dp))
+        Text(app.name)
     }
 }
