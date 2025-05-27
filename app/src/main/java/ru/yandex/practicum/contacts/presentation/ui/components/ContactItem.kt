@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.ui.components
+package ru.yandex.practicum.contacts.presentation.ui.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons

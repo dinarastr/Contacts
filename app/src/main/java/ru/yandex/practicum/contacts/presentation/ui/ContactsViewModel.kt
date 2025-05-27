@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.ui
+package ru.yandex.practicum.contacts.presentation.ui
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

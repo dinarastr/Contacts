@@ -10,16 +10,19 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.core.view.WindowCompat
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
-import ru.yandex.practicum.contacts.ui.ContactsScreen
-import ru.yandex.practicum.contacts.ui.theme.ContactsTheme
+import ru.yandex.practicum.contacts.presentation.ui.ContactsScreen
+import ru.yandex.practicum.contacts.presentation.ui.theme.ContactsTheme
 
 @OptIn(ExperimentalPermissionsApi::class)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         enableEdgeToEdge()
+        
         setContent {
             ContactsTheme {
                 Surface(
