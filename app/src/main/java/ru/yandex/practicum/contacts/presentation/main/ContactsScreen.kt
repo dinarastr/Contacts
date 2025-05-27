@@ -20,8 +20,8 @@ import ru.yandex.practicum.contacts.R
 import ru.yandex.practicum.contacts.presentation.country.CountryCodeBottomSheet
 import ru.yandex.practicum.contacts.presentation.messengers.MessengersBottomSheet
 import ru.yandex.practicum.contacts.presentation.sorting.SortBottomSheet
-import ru.yandex.practicum.contacts.presentation.ui.ContactsViewModel
-import ru.yandex.practicum.contacts.presentation.ui.ContactsViewModelFactory
+import ru.yandex.practicum.contacts.presentation.main.ContactsViewModel
+import ru.yandex.practicum.contacts.presentation.main.ContactsViewModelFactory
 import ru.yandex.practicum.contacts.presentation.ui.components.ContactItem
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)

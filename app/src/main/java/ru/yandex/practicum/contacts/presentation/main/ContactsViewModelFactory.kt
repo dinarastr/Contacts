@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.presentation.ui
+package ru.yandex.practicum.contacts.presentation.main
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
