@@ -30,7 +30,10 @@ fun MessengersBottomSheet(
         onDismiss = onDismiss
     ) { app, isSelected ->
         MessengerOption(
-            isSelected, app, selectedApps, onAppsSelected
+            isSelected = isSelected,
+            app = app,
+            selectedApps = selectedApps,
+            onAppsSelected = onAppsSelected
         )
     }
 }

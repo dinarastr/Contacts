@@ -32,7 +32,9 @@ fun SortBottomSheet(
         onDismiss = onDismiss
     ) { sortOrder, isSelected ->
         SortOrderOption(
-            isSelected, sortOrder, onSortOrderSelected
+            isSelected = isSelected,
+            sortOrder = sortOrder,
+            onSortOrderSelected = onSortOrderSelected
         )
     }
 }

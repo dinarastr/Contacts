@@ -33,7 +33,9 @@ fun CountryCodeBottomSheet(
     ) { countryCode, isSelected ->
         CountryCodeOption(
             isSelected = isSelected,
-            countryCode, selectedCodes, onCodesSelected
+            countryCode = countryCode,
+            selectedCodes = selectedCodes,
+            onCodesSelected = onCodesSelected
         )
     }
 }
