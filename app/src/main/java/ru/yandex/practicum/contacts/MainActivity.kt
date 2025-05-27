@@ -28,11 +28,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val contactsPermissionState = rememberPermissionState(Manifest.permission.READ_CONTACTS)
                     
-                    // Request permission immediately when the app launches
                     LaunchedEffect(Unit) {
                         contactsPermissionState.launchPermissionRequest()
                     }
-                    
                     ContactsScreen(permissionState = contactsPermissionState)
                 }
             }

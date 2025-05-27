@@ -8,10 +8,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import ru.yandex.practicum.contacts.data.Contact
 import ru.yandex.practicum.contacts.data.MessagingApp
-
-interface ContactsRepository {
-    fun getContacts(): Flow<List<Contact>>
-}
+import ru.yandex.practicum.contacts.domain.ContactsRepository
 
 class ContactsRepositoryImpl(private val context: Context) : ContactsRepository {
     override fun getContacts(): Flow<List<Contact>> = flow {
@@ -37,13 +34,11 @@ class ContactsRepositoryImpl(private val context: Context) : ContactsRepository 
                 val fullName = cursor.getString(nameIndex)
                 val phoneNumber = cursor.getString(numberIndex)
                 
-                // Split the full name into first and last name
                 val nameParts = fullName.split(" ", limit = 2)
                 val firstName = nameParts.firstOrNull() ?: ""
                 val lastName = nameParts.getOrNull(1) ?: ""
                 
-                // Create a contact with some random messaging apps for demonstration
-                val messagingApps = MessagingApp.values().filter { (0..1).random() == 1 }
+                val messagingApps = MessagingApp.entries.filter { (0..1).random() == 1 }
                 
                 contacts.add(
                     Contact(

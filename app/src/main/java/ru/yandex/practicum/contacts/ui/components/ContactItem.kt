@@ -56,7 +56,7 @@ fun ContactItem(
                 )
             }
             
-            IconButton(onClick = { /* Handle phone call */ }) {
+            IconButton(onClick = {  }) {
                 Icon(
                     imageVector = Icons.Default.Phone,
                     contentDescription = "Call",

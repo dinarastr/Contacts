@@ -10,11 +10,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionState
 import com.google.accompanist.permissions.isGranted
+import ru.yandex.practicum.contacts.R
 import ru.yandex.practicum.contacts.ui.components.ContactItem
 import ru.yandex.practicum.contacts.ui.components.CountryCodeBottomSheet
 import ru.yandex.practicum.contacts.ui.components.FilterBottomSheet
@@ -41,22 +43,22 @@ fun ContactsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Contacts") },
+                title = { Text(stringResource(R.string.app_name)) },
                 actions = {
                     IconButton(onClick = { showSortBottomSheet = true }) {
-                        Icon(Icons.Default.Sort, contentDescription = "Sort")
+                        Icon(Icons.Default.Sort, contentDescription = stringResource(R.string.menu_sort))
                     }
                     
                     IconButton(onClick = { showFilterBottomSheet = true }) {
-                        Icon(Icons.Default.FilterList, contentDescription = "Filter")
+                        Icon(Icons.Default.FilterList, contentDescription = stringResource(R.string.menu_filter))
                     }
                     
                     IconButton(onClick = { showCountryCodeBottomSheet = true }) {
-                        Icon(Icons.Default.Language, contentDescription = "Country Code")
+                        Icon(Icons.Default.Language, contentDescription = stringResource(R.string.menu_country))
                     }
                     
                     IconButton(onClick = { viewModel.toggleSearchVisibility() }) {
-                        Icon(Icons.Default.Search, contentDescription = "Search")
+                        Icon(Icons.Default.Search, contentDescription = stringResource(R.string.menu_search))
                     }
                 }
             )
@@ -75,12 +77,12 @@ fun ContactsScreen(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            "Contacts permission is required to display your contacts",
+                            stringResource(R.string.permission_required_message),
                             style = MaterialTheme.typography.bodyLarge
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         Button(onClick = { permissionState.launchPermissionRequest() }) {
-                            Text("Grant Permission")
+                            Text(stringResource( R.string.ask_permission_button))
                         }
                     }
                 }
@@ -95,7 +97,7 @@ fun ContactsScreen(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(16.dp),
-                                placeholder = { Text("Search contacts") },
+                                placeholder = { Text(stringResource(R.string.menu_search)) },
                                 leadingIcon = {
                                     Icon(Icons.Default.Search, contentDescription = null)
                                 }
