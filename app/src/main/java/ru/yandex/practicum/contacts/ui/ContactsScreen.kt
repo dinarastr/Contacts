@@ -17,10 +17,10 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionState
 import com.google.accompanist.permissions.isGranted
 import ru.yandex.practicum.contacts.R
+import ru.yandex.practicum.contacts.presentation.country.CountryCodeBottomSheet
+import ru.yandex.practicum.contacts.presentation.messengers.MessengersBottomSheet
+import ru.yandex.practicum.contacts.presentation.sorting.SortBottomSheet
 import ru.yandex.practicum.contacts.ui.components.ContactItem
-import ru.yandex.practicum.contacts.ui.components.CountryCodeBottomSheet
-import ru.yandex.practicum.contacts.ui.components.FilterBottomSheet
-import ru.yandex.practicum.contacts.ui.components.SortBottomSheet
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
@@ -131,7 +131,7 @@ fun ContactsScreen(
     }
     
     if (showFilterBottomSheet) {
-        FilterBottomSheet(
+        MessengersBottomSheet(
             selectedApps = viewModel.selectedMessagingApps,
             onAppsSelected = { apps ->
                 viewModel.updateSelectedMessagingApps(apps)

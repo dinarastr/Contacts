@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.core.view.WindowCompat
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberPermissionState
 import ru.yandex.practicum.contacts.ui.ContactsScreen
@@ -20,6 +21,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.setFlags(
+            android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+        
         setContent {
             ContactsTheme {
                 Surface(
