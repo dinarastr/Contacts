@@ -29,26 +29,38 @@ fun MessengersBottomSheet(
         onItemsSelected = onAppsSelected,
         onDismiss = onDismiss
     ) { app, isSelected ->
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Checkbox(
-                checked = isSelected,
-                onCheckedChange = { checked ->
-                    val newSelection = selectedApps.toMutableSet()
-                    if (checked) {
-                        newSelection.add(app)
-                    } else {
-                        newSelection.remove(app)
-                    }
-                    onAppsSelected(newSelection)
+        MessengerOption(
+            isSelected, app, selectedApps, onAppsSelected
+        )
+    }
+}
+
+@Composable
+private fun MessengerOption(
+    isSelected: Boolean,
+    app: MessagingApp,
+    selectedApps: Set<MessagingApp>,
+    onAppsSelected: (Set<MessagingApp>) -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = isSelected,
+            onCheckedChange = { checked ->
+                val newSelection = selectedApps.toMutableSet()
+                if (checked) {
+                    newSelection.add(app)
+                } else {
+                    newSelection.remove(app)
                 }
-            )
-            Spacer(modifier = Modifier.width(16.dp))
-            Text(app.name)
-        }
+                onAppsSelected(newSelection)
+            }
+        )
+        Spacer(modifier = Modifier.width(16.dp))
+        Text(app.name)
     }
 }
