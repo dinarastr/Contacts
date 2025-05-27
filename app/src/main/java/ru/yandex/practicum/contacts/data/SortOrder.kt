@@ -1,8 +1,8 @@
 package ru.yandex.practicum.contacts.data
 
 enum class SortOrder(val displayName: String) {
-    NAME_ASC("First Name (A-Z)"),
-    NAME_DESC("First Name (Z-A)"),
-    LAST_NAME_ASC("Last Name (A-Z)"),
-    LAST_NAME_DESC("Last Name (Z-A)")
+    NAME_ASC("имени (А-Я / A-Z)"),
+    NAME_DESC("имени (Я-А / Z-A)"),
+    LAST_NAME_ASC("фамилии (А-Я / A-Z"),
+    LAST_NAME_DESC("фамилии (Я-А / Z-A")
 } 

@@ -9,7 +9,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import ru.yandex.practicum.contacts.R
 import ru.yandex.practicum.contacts.data.CountryCode
 import ru.yandex.practicum.contacts.data.MessagingApp
 import ru.yandex.practicum.contacts.data.SortOrder
@@ -38,13 +40,13 @@ fun CountryCodeBottomSheet(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Filter by country code",
+                    text = stringResource(R.string.filter_by_country_code),
                     style = MaterialTheme.typography.titleLarge
                 )
                 IconButton(onClick = onDismiss) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Close"
+                        contentDescription = stringResource(R.string.close)
                     )
                 }
             }
@@ -134,13 +136,13 @@ fun FilterBottomSheet(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Filter by messaging app",
+                    text = stringResource(R.string.filter_by_messaging_app),
                     style = MaterialTheme.typography.titleLarge
                 )
                 IconButton(onClick = onDismiss) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Close"
+                        contentDescription = stringResource(R.string.close)
                     )
                 }
             }
@@ -223,7 +225,7 @@ fun SortBottomSheet(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Sort by",
+                    text = stringResource(R.string.sort_by_default),
                     style = MaterialTheme.typography.titleLarge
                 )
                 IconButton(onClick = onDismiss) {
