@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.ui
+package ru.yandex.practicum.contacts.presentation.main
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -7,11 +7,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import ru.yandex.practicum.contacts.data.Contact
-import ru.yandex.practicum.contacts.data.CountryCode
-import ru.yandex.practicum.contacts.data.MessagingApp
-import ru.yandex.practicum.contacts.data.SortOrder
-import ru.yandex.practicum.contacts.domain.GetContactsUseCase
+import ru.yandex.practicum.contacts.data.models.Contact
+import ru.yandex.practicum.contacts.data.models.CountryCode
+import ru.yandex.practicum.contacts.data.models.MessagingApp
+import ru.yandex.practicum.contacts.data.models.SortOrder
+import ru.yandex.practicum.contacts.domain.usecase.GetContactsUseCase
 
 class ContactsViewModel(
     private val getContactsUseCase: GetContactsUseCase

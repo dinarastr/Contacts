@@ -1,10 +1,10 @@
-package ru.yandex.practicum.contacts.ui
+package ru.yandex.practicum.contacts.presentation.main
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import ru.yandex.practicum.contacts.data.repository.ContactsRepositoryImpl
-import ru.yandex.practicum.contacts.domain.GetContactsUseCase
+import ru.yandex.practicum.contacts.domain.usecase.GetContactsUseCase
 
 class ContactsViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")

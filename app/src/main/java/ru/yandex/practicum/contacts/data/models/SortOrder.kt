@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.data
+package ru.yandex.practicum.contacts.data.models
 
 enum class SortOrder(val displayName: String) {
     NAME_ASC("имени (А-Я / A-Z)"),

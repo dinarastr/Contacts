@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.ui.theme
+package ru.yandex.practicum.contacts.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

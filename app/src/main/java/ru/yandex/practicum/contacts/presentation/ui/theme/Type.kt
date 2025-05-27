@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.ui.theme
+package ru.yandex.practicum.contacts.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

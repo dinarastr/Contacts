@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.ui
+package ru.yandex.practicum.contacts.presentation.main
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,7 +20,7 @@ import ru.yandex.practicum.contacts.R
 import ru.yandex.practicum.contacts.presentation.country.CountryCodeBottomSheet
 import ru.yandex.practicum.contacts.presentation.messengers.MessengersBottomSheet
 import ru.yandex.practicum.contacts.presentation.sorting.SortBottomSheet
-import ru.yandex.practicum.contacts.ui.components.ContactItem
+import ru.yandex.practicum.contacts.presentation.ui.components.ContactItem
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable

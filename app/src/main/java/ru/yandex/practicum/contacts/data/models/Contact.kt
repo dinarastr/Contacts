@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts.data
+package ru.yandex.practicum.contacts.data.models
 
 data class Contact(
     val id: Long,
