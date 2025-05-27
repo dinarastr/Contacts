@@ -6,9 +6,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import ru.yandex.practicum.contacts.data.Contact
-import ru.yandex.practicum.contacts.data.MessagingApp
-import ru.yandex.practicum.contacts.domain.ContactsRepository
+import ru.yandex.practicum.contacts.data.models.Contact
+import ru.yandex.practicum.contacts.data.models.MessagingApp
+import ru.yandex.practicum.contacts.domain.repository.ContactsRepository
 
 class ContactsRepositoryImpl(private val context: Context) : ContactsRepository {
     override fun getContacts(): Flow<List<Contact>> = flow {

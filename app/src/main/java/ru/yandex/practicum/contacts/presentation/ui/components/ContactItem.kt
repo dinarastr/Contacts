@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ru.yandex.practicum.contacts.data.Contact
+import ru.yandex.practicum.contacts.data.models.Contact
 
 @Composable
 fun ContactItem(

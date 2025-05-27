@@ -1,4 +1,4 @@
-package ru.yandex.practicum.contacts
+package ru.yandex.practicum.contacts.presentation
 
 import android.Manifest
 import android.os.Bundle

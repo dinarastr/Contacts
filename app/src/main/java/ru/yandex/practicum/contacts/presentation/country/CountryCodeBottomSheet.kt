@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ru.yandex.practicum.contacts.R
-import ru.yandex.practicum.contacts.data.CountryCode
+import ru.yandex.practicum.contacts.data.models.CountryCode
 import ru.yandex.practicum.contacts.presentation.ui.components.CommonBottomSheet
 
 @Composable
